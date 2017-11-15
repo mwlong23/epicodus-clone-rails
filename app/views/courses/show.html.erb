@@ -2,4 +2,13 @@
 
 <p> <%= link_to "Courses", courses_path %> </p>
 
-<h1><%= @course.title %></h1>
+<h4>Lessons for <%= @course.title %></h4>
+<% if @course.lessons.any? %>
+  <ul>
+    <% @course.lessons.each do |lesson| %>
+      <li><%= lesson.name %></li>
+      <% end %>
+  </ul>
+  <% else %>
+    <p>There are no </p>
+  <% end %>

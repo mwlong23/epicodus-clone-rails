@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   def index
     @course = Course.all
+    @lesson = @course.lessons
     render :index
   end
 
